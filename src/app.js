@@ -53,6 +53,8 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({error})
         }
+        console.log('lat: ', latitude)
+        console.log('long: ', longitude)
 
         forecast(latitude, longitude, (error, {currently}) => {
             if (error) {
@@ -61,6 +63,7 @@ app.get('/weather', (req, res) => {
 
             res.send({
                 location,
+                summary: currently.summary,
                 temperature: currently.temperature,
             })
         })

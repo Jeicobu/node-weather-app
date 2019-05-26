@@ -6,9 +6,8 @@ const weather = (adress) => {
             }
 
             locationEl.textContent = data.location
+            summaryEl.textContent = data.summary
             temperatureEl.textContent = data.temperature
-
-            console.log(data)
         })
     })
 }
@@ -17,6 +16,7 @@ const weatherForm = document.querySelector('form')
 const input = document.querySelector('input')
 const locationEl = document.querySelector('.location')
 const temperatureEl = document.querySelector('.temperature')
+const summaryEl = document.querySelector('.summary')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
